@@ -4,11 +4,14 @@ let weatherInfo = document.querySelector(".weather__info");
 let weatherImage = document.querySelector(".weather__image");
 let weatherDegree = document.querySelector(".weather__degree");
 let weatherDesc = document.querySelector(".weather__desc");
+let weatherWind = document.querySelector(".weather__wind");
+let weatherHumidity = document.querySelector(".weather__humidity");
 let searchForm = document.querySelector(".search__form");
 let searchInput = document.querySelector(".search__input");
 let searchBtn = document.querySelector(".search__button");
 let forecastDay = document.querySelector(".forecastday");
 let weekDay = document.querySelector(".week__day");
+let tomorrow = document.querySelector(".tomorrow")
 let weekDayAfter = document.querySelector(".week__day__after");
 let weekDayToday = document.querySelector(".week__day__today");
 let otherDaysImg = document.querySelector(".other__days__img");
@@ -16,6 +19,7 @@ let otherDaysMaxCelciy = document.querySelector(".other__days__maxcelciy");
 let otherDaysMinCelciy = document.querySelector(".other__days__mincelciy");
 let otherDayDesc = document.querySelector(".other__day__desc__info");
 let otherDaysImgAfter = document.querySelector(".other__days__img__after");
+let theMorningAfter  = document.querySelector(".the__morning__after")
 let otherDaysMaxCelciyAfter = document.querySelector(
   ".other__days__maxcelciy__after"
 );
@@ -26,6 +30,7 @@ let otherDayDescAfter = document.querySelector(
   ".other__day__desc__info__after"
 );
 let hero = document.querySelector(".hero");
+let navbar = document.querySelector(".navbar")
 
 const API__URL =
   "https://api.weatherapi.com/v1/forecast.json?key=644f6ce0ca9e401ebb891832211707&q=Tashkent&days=7&aqi=yes&alerts=yes";
@@ -58,6 +63,9 @@ function renderWeather(data) {
   weatherDesc.textContent = data.current.condition.text;
   weekDayToday.innerHTML = otherDaysImg.src =
     data.forecast.forecastday[1].day.condition.icon;
+  weatherWind.innerHTML = `Max wind : ${data.forecast.forecastday[0].day.maxwind_kph} kph`;
+  weatherHumidity.innerHTML = `Humidity : ${data.forecast.forecastday[0].day.avghumidity} %`;
+  console.log(data.forecast.forecastday[0].day.maxwind_kph);
   otherDayDesc.innerHTML = data.forecast.forecastday[1].day.condition.text;
   otherDaysMaxCelciy.innerHTML = `Max : ${data.forecast.forecastday[1].day.maxtemp_c}°`;
   otherDaysMinCelciy.innerHTML = `Min : ${data.forecast.forecastday[1].day.mintemp_c}°`;
@@ -125,54 +133,74 @@ function renderWeather(data) {
       hero.classList.remove("hero__rainy");
       hero.classList.add("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Light rain":
       hero.classList.remove("hero__cloudy");
       hero.classList.add("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Light rain shower":
       hero.classList.remove("hero__cloudy");
       hero.classList.add("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Patchy rain nearby":
       hero.classList.remove("hero__cloudy");
       hero.classList.add("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
+      break;
+    case "Moderate rain":
+      hero.classList.remove("hero__cloudy");
+      hero.classList.add("hero__rainy");
+      hero.classList.remove("hero__sunny");
+      hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Partly cloudy":
       hero.classList.add("hero__cloudy");
       hero.classList.remove("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Cloudy":
       hero.classList.add("hero__cloudy");
       hero.classList.remove("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Overcast":
       hero.classList.add("hero__cloudy");
       hero.classList.remove("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Clear":
       hero.classList.remove("hero__cloudy");
       hero.classList.remove("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.add("hero__clear");
+      hero.classList.remove("hero__mist");
       break;
     case "Mist":
       hero.classList.remove("hero__cloudy");
       hero.classList.remove("hero__rainy");
       hero.classList.remove("hero__sunny");
       hero.classList.add("hero__mist");
+      navbar.style.color = "black"
+      weatherWrapper.style.color = "black";
+      forecastDayItem.style.color = "black";
+      tomorrow.style.color = "black";
+      theMorningAfter.style.color = "black";
       break;
     default:
       break;
