@@ -150,6 +150,12 @@ function renderWeather(data) {
       hero.classList.remove("hero__sunny");
       hero.classList.remove("hero__clear");
       break;
+    case "Cloudy":
+      hero.classList.add("hero__cloudy");
+      hero.classList.remove("hero__rainy");
+      hero.classList.remove("hero__sunny");
+      hero.classList.remove("hero__clear");
+      break;
     case "Overcast":
       hero.classList.add("hero__cloudy");
       hero.classList.remove("hero__rainy");
