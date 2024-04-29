@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  padding: 15px 30px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff2;
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  color: white;
+}
+
+.search__input {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  width: 70%;
+}
+
+.container {
+  width: 85%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 150px;
+
+}
+
+.hero__sunny{
+  background: url(https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4=) no-repeat center/cover;
+}
+
+.hero__rainy{
+    background: url(https://t4.ftcdn.net/jpg/01/63/96/63/360_F_163966311_qh3qSk57mw9oLPOklZigzX9zlB5DgdaM.jpg) no-repeat center/cover;
+}
+
+.hero__cloudy{
+  background: url(/images/1330873-clouds-weather.webp) no-repeat center/cover;
+}
+
+.hero__snowy{
+  background: url(https://t4.ftcdn.net/jpg/06/35/85/55/360_F_635855514_Ji1vjTXbl4Cw5DJft2rXbfe91WgPr76e.jpg) no-repeat center/cover;
+}
+
+.hero__clear{
+  background: url(https://st.depositphotos.com/1053646/2615/i/450/depositphotos_26155471-stock-photo-beautiful-landscape.jpg) no-repeat center/cover;
+}
+
+.hero__mist{
+  background: url(https://www.shutterstock.com/image-photo/landscape-heavy-foggy-road-winter-260nw-1594521517.jpghttps://www.shutterstock.com/image-photo/landscape-heavy-foggy-road-winter-260nw-1594521517.jpg) no-repeat center/cover;
+}
+
+.weather__wrapper {
+  width: 100%;
+  min-height: 300px;
+  background: #fff2;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+
+.weather__region{
+    font-size: 24px;
+}
+
+.weather__info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 30px;
+}
+.weather__degree{
+    font-size: 80px;
+
+}
+
+
+
+.search__button{
+    background: transparent;
+    border: none;
+    padding: none;
+    width: 20%;
+}
+
+.search__button img{
+    width: 20px;
+}
+
+.search__form{
+    padding-left: 20px;
+    border-radius: 5px;
+    background: white;
+}
+
+.forecastday {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  overflow: auto;
+  padding: 10px 0px;
+}
+
+.forecastday::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecastday::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #fff4;
+}
+
+.forecastday__item {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.forecastday__item p{
+  color: white;
+  font-size: 20px;
+}
+
+.other__weather__wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 80px 0px;
+}
+
+.tomorrow,.the__morning__after{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  font-size: 20px;
+  color: white;
+  background: #fff2;
+}
+
+@media (max-width:650px) {
+  .tomorrow,.the__morning__after{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .search__form{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+}
+}
+
+@media (max-width:400px){
+  .weather__info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

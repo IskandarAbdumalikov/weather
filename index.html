@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLOBAL WEATHER AGENCY</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <h2>WEATHER</h2>
+          <form action="" class="search__form">
+            <input type="text" class="search__input" placeholder="Search" />
+            <button class="search__button">
+              <img src="/images/search.svg" alt="" />
+            </button>
+          </form>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="container">
+          <div class="weather__wrapper">
+            <h2 class="week__day__today">Sunday</h2>
+            <p class="weather__region">Tashkent. UZBEKISTAN</p>
+            <div class="weather__info">
+              <img class="weather__image" src="" alt="image" />
+              <p class="weather__degree">29°</p>
+            </div>
+            <p class="weather__desc"></p>
+          </div>
+          <div class="forecastday"></div>
+          <div class="other__weather__wrapper">
+            <div class="tomorrow">
+              <p class="week__day"></p>
+              <div class="other__day__desc">
+                <img class="other__days__img" src="" alt="" />
+                <p class="other__day__desc__info"></p>
+              </div>
+              <p class="other__days__maxcelciy"></p>
+              <p class="other__days__mincelciy"></p>
+            </div>
+            <div class="the__morning__after">
+              <p class="week__day__after"></p>
+              <div class="other__day__desc__after">
+                <img class="other__days__img__after" src="" alt="" />
+                <p class="other__day__desc__info__after"></p>
+              </div>
+              <p class="other__days__maxcelciy__after"></p>
+              <p class="other__days__mincelciy__after"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/weather.js"></script>
+  </body>
+</html>
